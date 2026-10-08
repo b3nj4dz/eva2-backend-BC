@@ -13,15 +13,17 @@
         <div class="row g-4">
             {% for pelicula in peliculas %}
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                <article class="movie-card">
-                    <div class="movie-poster-wrap">
-                        <img class="movie-poster" src="{% static 'img/' %}{{ pelicula.imagen }}" alt="Póster de {{ pelicula.nombre }}" loading="lazy">
-                        <span class="movie-year">{{ pelicula.año }}</span>
+                <article class="card h-100 bg-dark text-light border-secondary">
+                    <div class="position-relative">
+                        <div class="ratio" style="--bs-aspect-ratio: 133.333%;">
+                            <img class="card-img-top object-fit-cover" src="{% static 'img/' %}{{ pelicula.imagen }}" alt="Póster de {{ pelicula.nombre }}" loading="lazy">
+                        </div>
+                        <span class="badge text-bg-dark position-absolute top-0 end-0 m-2">{{ pelicula.año }}</span>
                     </div>
-                    <div class="movie-info">
-                        <span class="movie-category">PELISGO · COMEDIA</span>
-                        <h3>{{ pelicula.nombre }}</h3>
-                        <p>{{ pelicula.descripcion }}</p>
+                    <div class="card-body">
+                        <span class="badge text-bg-warning mb-2">PELISGO · COMEDIA</span>
+                        <h3 class="card-title h5">{{ pelicula.nombre }}</h3>
+                        <p class="card-text text-light mb-0">{{ pelicula.descripcion }}</p>
                     </div>
                 </article>
             </div>

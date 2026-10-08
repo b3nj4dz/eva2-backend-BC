@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<section class="home-discover section-space">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">ELIGE TU PLAN</span>
+                <h2>¿Qué genero te gusta más?</h2>
+            </div>
+            <a class="text-link" href="{% url 'home:peliculas' %}">Ver todas las películas <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="row g-3">
+            <div class="col-12 col-md-4">
+                <a class="card h-100 bg-dark text-light border-secondary text-decoration-none" href="{% url 'home:accion' %}">
+                    <div class="card-body d-flex align-items-end gap-3">
+                        <span class="badge text-bg-warning fs-4" aria-hidden="true">⚡</span>
+                        <span>
+                            <small class="d-block text-secondary fw-semibold">ADRENALINA PURA</small>
+                            <strong class="d-block fs-4">Acción</strong>
+                        </span>
+                        <span class="ms-auto align-self-start text-warning fs-4" aria-hidden="true">↗</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a class="card h-100 bg-dark text-light border-secondary text-decoration-none" href="{% url 'home:comedia' %}">
+                    <div class="card-body d-flex align-items-end gap-3">
+                        <span class="badge text-bg-warning fs-4" aria-hidden="true">☀</span>
+                        <span>
+                            <small class="d-block text-secondary fw-semibold">BUEN HUMOR</small>
+                            <strong class="d-block fs-4">Comedia</strong>
+                        </span>
+                        <span class="ms-auto align-self-start text-warning fs-4" aria-hidden="true">↗</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4">
+                <a class="card h-100 bg-dark text-light border-secondary text-decoration-none" href="{% url 'home:drama' %}">
+                    <div class="card-body d-flex align-items-end gap-3">
+                        <span class="badge text-bg-warning fs-4" aria-hidden="true">✦</span>
+                        <span>
+                            <small class="d-block text-secondary fw-semibold">HISTORIAS QUE EMOCIONAN</small>
+                            <strong class="d-block fs-4">Drama</strong>
+                        </span>
+                        <span class="ms-auto align-self-start text-warning fs-4" aria-hidden="true">↗</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
