@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Películas | PelisGo{% endblock %}
+{% block title %}Drama | PelisGo{% endblock %}
 {% block content %}
 <section class="catalog-section section-space">
     <div class="container">
         <div class="section-heading">
             <div>
-                <span class="eyebrow">SELECCIÓN PELISGO</span>
-                <h2>Películas destacadas</h2>
+                <span class="eyebrow">HISTORIAS QUE TOCAN</span>
+                <h2>Drama destacado</h2>
             </div>
         </div>
         <div class="row g-4">
@@ -19,7 +19,7 @@
                         <span class="movie-year">{{ pelicula.año }}</span>
                     </div>
                     <div class="movie-info">
-                        <span class="movie-category">PELISGO · {{ pelicula.genero|upper }}</span>
+                        <span class="movie-category">PELISGO · DRAMA</span>
                         <h3>{{ pelicula.nombre }}</h3>
                         <p>{{ pelicula.descripcion }}</p>
                     </div>
@@ -27,7 +27,7 @@
             </div>
             {% empty %}
             <div class="col-12">
-                <p class="empty-state">Estamos preparando nuevas películas. Vuelve pronto.</p>
+                <p class="empty-state">Estamos preparando nuevas películas de drama. Vuelve pronto.</p>
             </div>
             {% endfor %}
         </div>
