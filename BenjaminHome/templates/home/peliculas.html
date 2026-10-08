@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Películas | PelisGo{% endblock %}
+{% block content %}
+<section class="catalog-section section-space">
+    <div class="container">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">SELECCIÓN PELISGO</span>
+                <h2>Películas destacadas</h2>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for pelicula in peliculas %}
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                <article class="movie-card">
+                    <div class="movie-poster-wrap">
+                        <img class="movie-poster" src="{% static 'img/' %}{{ pelicula.imagen }}" alt="Póster de {{ pelicula.nombre }}" loading="lazy">
+                        <span class="movie-year">{{ pelicula.año }}</span>
+                    </div>
+                    <div class="movie-info">
+                        <span class="movie-category">PELISGO · {{ pelicula.genero|upper }}</span>
+                        <h3>{{ pelicula.nombre }}</h3>
+                        <p>{{ pelicula.descripcion }}</p>
+                    </div>
+                </article>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <p class="empty-state">Estamos preparando nuevas películas. Vuelve pronto.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
