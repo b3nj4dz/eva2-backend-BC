@@ -10,6 +10,7 @@
                 <h2>Películas destacadas</h2>
             </div>
         </div>
+        {% if peliculas %}
         <div class="row g-4">
             {% for pelicula in peliculas %}
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
@@ -27,12 +28,11 @@
                     </div>
                 </article>
             </div>
-            {% empty %}
-            <div class="col-12">
-                <p class="empty-state">Estamos preparando nuevas películas. Vuelve pronto.</p>
-            </div>
             {% endfor %}
         </div>
+        {% else %}
+        <p class="empty-state">Estamos preparando nuevas películas. Vuelve pronto.</p>
+        {% endif %}
     </div>
 </section>
 {% endblock %}
